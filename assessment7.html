@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assessment</title>
+    <link rel="stylesheet" href="new2.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="welcome_text1">
+            <h1>As per the assessment your COVID-19 risk is</h1>
+            <script>
+                var result =localStorage.getItem("myvalue")
+                if(result < 7 ){
+                    document.write("<h2>LOW</h2>")
+                }
+                else if(result>=7 && result<10){
+                    document.write("<h2>MEDIUM</h2>")
+                }
+                else{
+                    document.write("<h2>HIGH<h2>")
+                }
+            </script>
+        </div>
+    </div>
+    <script src="new.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assessment</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="welcome_text1">
+            <h1>Do you have any of these symptoms ?</h1>
+            <div class="center">
+            </div>
+                <div class="wrap centre">
+                    <div class="box">
+                        <input type="checkbox" onclick="check_new()" id="fever" name="child"  >
+                        <span class="check"></span>
+                        <label for="fever">fever</label>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" onclick="check_new()" id="dry caugh" name="child"  >
+                        <span class="check"></span>
+                        <label for="dry caugh">dry caugh</label>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" onclick="check_new()" id="sore throat" name="child"  >
+                        <span class="check"></span>
+                        <label for="sore throat">sore throat</label>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" onclick="check_all()" id="parent" name="parent" >
+                        <span class="check"></span>
+                        <label for="parent">none of the above</label>
+                    </div>
+                </div>  
+                <button class="btn_nxt" onclick="click2()">next</button>      
+        </div>
+    </div>
+    <script >
+        function check_all(){
+    var parent=document.getElementById("parent")
+    var input=document.getElementsByTagName("input")
+    if(parent.checked===true){
+        for(var i=0;i<input.length;i++){
+            if(input[i].type=="checkbox" && input[i].id!=="parent" && input[i].checked== true){
+                input[i].checked=false
+            }
+        }
+    }
+}
+function check_new(){
+    var parent=document.getElementById("parent")
+    var input=document.getElementsByTagName("input")
+        for(var i=0;i<input.length;i++){
+            if(input[i].type=="checkbox" && input[i].id=="parent" && input[i].checked== true){
+                parent.checked=false
+            }
+        }
+}
+    </script>
+    <script src="new.js"></script>
+</body>
+</html>
